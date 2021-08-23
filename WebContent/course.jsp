@@ -66,9 +66,9 @@ color:#fff;
         
           <h2 style="color:#0069cc;font-size:20px;text-align:center;">ADD COURSE</h2>
        <p>Course Name  : </p><input type="text" name="c_name" /><br>
-        <p>Course Description  : </p><input type="text" name="c_desp" /><br>
+        <p>Course Description  : </p><input type="text" name="c_desc" /><br>
        <p> Course Resources     : </p><input type="text" name="c_resource" /><br>
-        <p>Course fees       : </p><input type="text" name="c_fees" /><br>
+        <p>Course fees       : </p><input type="number" name="c_fees" /><br>
                     <input type="submit" value="Submit" /><br>
      </form>
      </div>

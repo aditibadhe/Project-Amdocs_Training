@@ -13,7 +13,8 @@ try{
 rs.next();
 if(rs.getString("password").equals(password)&&rs.getString("user_name").equals(user_name))
 {
-out.println("Welcome " +user_name);
+	RequestDispatcher req = request.getRequestDispatcher("user_landing.jsp");
+	req.forward(request, response);
 }
 else{
 out.println("Invalid password or username.");

@@ -1,11 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.*,java.util.*"%>
+<%
+String admin_id=request.getParameter("admin_id");
+session.putValue("admin_id",admin_id);
+String admin_password=request.getParameter("admin_password");
+Class.forName("com.mysql.jdbc.Driver");
+java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_project","root","root");
+Statement st= con.createStatement();
+ResultSet rs=st.executeQuery("select * from admin where admin_id='"+admin_id+"' and admin_password='"+admin_password+"'");
+try{
+rs.next();
+if(rs.getString("admin_password").equals(admin_password)&&rs.getString("admin_id").equals(admin_id))
+{
+	RequestDispatcher req = request.getRequestDispatcher("admin_landing.jsp");
+	req.forward(request, response);
+}
+else{
+out.println("Invalid password or Admin name.");
+}
+}
+catch (Exception e) {
+e.printStackTrace();
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="register.css">
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Admin Login</title>
 </head>
 <style>
 .loginbox{
@@ -62,9 +85,9 @@ color:#fff;
 <div class="loginbox">
      <form>
         <h2 style="color:#0069cc;font-size:25px;text-align:center;">ADMIN LOGIN</h2>
-       <p> Username  : </p><input type="text" name="user_name" /><br>
+       <p> Admin name  : </p><input type="text" name="admin_id" /><br>
         
-       <p> Password  : </p><input type="password" name="password" /><br>
+       <p> Admin Password  : </p><input type="password" name="admin_password" /><br>
         
                     <input type="submit" value="Sign In" /><br>
      </form>

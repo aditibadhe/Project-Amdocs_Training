@@ -37,7 +37,8 @@
 <body style="background-color:#cce6ff;">
 
 <div class="row">
-  <h3 style="color: #0073e6;text-align:center;font-size:35px;">Hello user</h3>
+<% String username = request.getParameter("user_name"); %>
+  <h3 style="color: #0073e6;text-align:center;font-size:35px;">Welcome   <% out.println(username); %></h3>
   <br>
 <center>  
 <a href="courselist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;

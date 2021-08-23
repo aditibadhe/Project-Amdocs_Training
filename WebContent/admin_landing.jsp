@@ -50,8 +50,13 @@ display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:5
 
 <br>
 <a href="messagelist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">Add Course</a></center>
-></center>
+display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">View Messages</a>
+
+<br>
+<a href="courselist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
+display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">Course List</a>
+<br>
+</center>
 </div>
 </div>
 
