@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@page import="java.sql.*,java.util.*"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +39,9 @@
 <body style="background-color:#cce6ff;">
 
 <div class="row">
-<% String username = request.getParameter("user_name"); %>
-  <h3 style="color: #0073e6;text-align:center;font-size:35px;">Welcome   <% out.println(username); %></h3>
+<% String user_name = request.getParameter("user_name"); %>
+
+  <h3 style="color: #0073e6;text-align:center;font-size:35px;">Welcome   <% out.println(user_name); %></h3>
   <br>
 <center>  
 <a href="courselist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;

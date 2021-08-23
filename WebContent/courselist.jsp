@@ -46,16 +46,20 @@ ResultSet resultSet = null;
 #customers td{
 background-color:#fff;
 }
+h1 {
+color:#0069cc;
+text-align:center;
+}
 </style>
 <body style="background-color:#cce6ff">
 
-<h1>Course list</h1>
+<h1>Course list</h1><br>
 <table border="1" id="customers">
 <tr>
-<td>Course ID</td>
-<td>Course Name</td>
-<td>Course Description</td>
-<td>City Fees</td>
+<th>Course ID</th>
+<th>Course Name</th>
+<th>Course Description</th>
+<th>City Fees</th>
 
 
 </tr>
