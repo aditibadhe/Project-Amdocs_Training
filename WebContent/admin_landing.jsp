@@ -40,21 +40,27 @@
   <h3 style="color: #0073e6;text-align:center;font-size:35px;">Hello Admin</h3>
   <center>  
 <a href="course.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">Add Course</a>
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">Add Course</a>
+<br>
+<a href="update_course.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">Update Course</a>
+<br>
+<a href="delete_course" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">Delete Course</a>
 <br>
 <a href="userlist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">User List</a>
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">User List</a>
 <br>
 <a href="feedbacklist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">View Feedbacks</a>
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">View Feedbacks</a>
 
 <br>
 <a href="messagelist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">View Messages</a>
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">View Messages</a>
 
 <br>
 <a href="courselist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
-display: inline-block; font-size: 30px; margin: 4px 2px;cursor: pointer;height:50px;width:200px;">Course List</a>
+display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">Course List</a>
 <br>
 </center>
 </div>

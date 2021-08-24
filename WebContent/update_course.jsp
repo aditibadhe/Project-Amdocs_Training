@@ -1,9 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.*" %>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-String id = request.getParameter("userid");
+String id = request.getParameter("id");
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
 String database = "demo_project";
@@ -18,7 +22,6 @@ Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
 %>
-<!DOCTYPE html>
 <html>
 <style>
 #customers {
@@ -52,16 +55,15 @@ text-align:center;
 }
 </style>
 <body style="background-color:#cce6ff">
-
-<h1>Course list</h1><br>
+<h1>Course List</h1>
 <table border="1" id="customers">
 <tr>
-<th>Course ID</th>
-<th>Course Name</th>
+<th>Course id</th>
+<th>Course name</th>
 <th>Course Description</th>
 <th>Course Fees</th>
 <th>Course Resource</th>
-
+<th>Update</th>
 </tr>
 <%
 try{
@@ -77,7 +79,7 @@ while(resultSet.next()){
 <td><%=resultSet.getString("c_desc") %></td>
 <td><%=resultSet.getString("c_fees") %></td>
 <td><%=resultSet.getString("c_resource") %></td>
-
+<td><a href="course_updation.jsp?course_id=<%=resultSet.getString("course_id")%>">update</a></td>
 </tr>
 <%
 }

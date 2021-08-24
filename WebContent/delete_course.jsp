@@ -3,7 +3,6 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-String id = request.getParameter("userid");
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
 String database = "demo_project";
@@ -20,6 +19,7 @@ ResultSet resultSet = null;
 %>
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
 #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -52,16 +52,15 @@ text-align:center;
 }
 </style>
 <body style="background-color:#cce6ff">
-
-<h1>Course list</h1><br>
+<h1>Course List</h1>
 <table border="1" id="customers">
 <tr>
-<th>Course ID</th>
-<th>Course Name</th>
+<th>Course id</th>
+<th>Course name</th>
 <th>Course Description</th>
 <th>Course Fees</th>
 <th>Course Resource</th>
-
+<th>Action</th>
 </tr>
 <%
 try{
@@ -69,6 +68,7 @@ connection = DriverManager.getConnection(connectionUrl+database, userid, passwor
 statement=connection.createStatement();
 String sql ="select * from course";
 resultSet = statement.executeQuery(sql);
+int i=0;
 while(resultSet.next()){
 %>
 <tr>
@@ -77,9 +77,10 @@ while(resultSet.next()){
 <td><%=resultSet.getString("c_desc") %></td>
 <td><%=resultSet.getString("c_fees") %></td>
 <td><%=resultSet.getString("c_resource") %></td>
-
+<td><a href="delete.jsp?id=<%=resultSet.getString("course_id") %>"><button type="button" class="delete">Delete</button></a></td>
 </tr>
 <%
+i++;
 }
 connection.close();
 } catch (Exception e) {

@@ -37,10 +37,8 @@ public class CourseController extends HttpServlet {
 		
 	if(saveCourse) {
 
-		
-RequestDispatcher rd=request.getRequestDispatcher("/admin_landing.jsp");  
-		rd.include(request, response);
-		}
+		out.println("Course added successfuly !");
+	}
 		else {
 			out.println("try again");
 		}
