@@ -2,6 +2,7 @@ package com.amdocs.training.Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,15 +32,26 @@ public class CourseController extends HttpServlet {
 		
 		Course course = new Course(c_name,c_fees, c_desc,c_resource);
 		
-		CourseDAO dao = (CourseDAO) new CourseDAOImpl();
+		CourseDAO dao = null;
+		try {
+			dao = (CourseDAO) new CourseDAOImpl();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		boolean saveCourse = dao.saveCourse(course);
 		
 	if(saveCourse) {
 
-		out.println("Course added successfuly !");
-	}
-		else {
+		//out.println("Course added successfuly !");
+		//request.getRequestDispatcher("admin_landing.jsp").forward(request, response);
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('Course Added Succcessfully !!');");
+		out.println("location='admin_landing.jsp';");
+		out.println("</script>");
+	}		
+	else {
 			out.println("try again");
 		}
 	}	

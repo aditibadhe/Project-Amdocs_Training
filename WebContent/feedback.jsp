@@ -65,7 +65,7 @@ color:#fff;
         
           <h2 style="color:#0069cc;font-size:20px;text-align:center;">FEEDBACK FORM</h2>
        <p>User Id   : </p><input type="number" name="user_id" /><br>
-       <p> Username  :</p> <input type="text" name="user_name" /><br>
+       <p> User name  :</p> <input type="text" name="user_name" /><br>
         <p>Email     : </p><input type="email" name="email" /><br>
          <p>Feedback   : </p><input type="text" name="user_feedback" /><br>
        

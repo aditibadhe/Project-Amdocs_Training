@@ -2,6 +2,7 @@ package com.amdocs.training.Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,13 +33,25 @@ public class FeedbackController extends HttpServlet {
 
 		Feedback feedback = new Feedback(user_id, user_name,email,user_feedback);
 		
-		FeedbackDAO dao = (FeedbackDAO) new FeedbackDAOImpl();
+		FeedbackDAO dao = null;
+		try {
+			dao = (FeedbackDAO) new FeedbackDAOImpl();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		boolean saveFeedback = dao.saveFeedback(feedback);
 		
 	if(saveFeedback) {
-			out.println("Feedback Saved Successfully!");
-		}
+		//request.getRequestDispatcher("user_landing.jsp").forward(request, response);
+
+			//out.println("Feedback Saved Successfully!");
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('Feedback added Succcessfully !!');");
+		out.println("location='user_landing.jsp';");
+		out.println("</script>");	
+	}
 		else {
 			out.println("try again");
 		}

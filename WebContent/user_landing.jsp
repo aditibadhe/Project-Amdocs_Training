@@ -37,7 +37,7 @@
 
 </style>
 <body style="background-color:#cce6ff;">
-
+<a href="user_logout.jsp" style="float:right;">LogOut</a>
 <div class="row">
 <% String user_name = request.getParameter("user_name"); %>
 

@@ -2,6 +2,7 @@ package com.amdocs.training.Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,12 +34,23 @@ public class UserController extends HttpServlet {
 
 		User user = new User(user_name, phone_no,email,address,reg_date,password,upload_photo);
 		
-		UserDAO dao = (UserDAO) new UserDAOImpl();
+		UserDAO dao = null;
+		try {
+			dao = (UserDAO) new UserDAOImpl();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		boolean saveUser = dao.saveUser(user);
 		
 	if(saveUser) {
-			out.println("User Saved Successfully!");
+			//out.println("User Saved Successfully!");
+			//request.getRequestDispatcher("user_landing.jsp").forward(request, response);
+		out.println("<script type=\"text/javascript\">");
+		out.println("alert('User Registered Succcessfully !!');");
+		out.println("location='index.jsp';");
+		out.println("</script>");
 		}
 		else {
 			out.println("try again");

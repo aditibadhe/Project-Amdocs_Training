@@ -30,6 +30,11 @@ int i = ps.executeUpdate();
 if(i > 0)
 {
 out.print("Record Updated Successfully");
+//request.getRequestDispatcher("admin_landing.jsp").forward(request, response);
+out.println("<script type=\"text/javascript\">");
+out.println("alert('Course Updated Succcessfully !!');");
+out.println("location='admin_landing.jsp';");
+out.println("</script>");
 }
 else
 {

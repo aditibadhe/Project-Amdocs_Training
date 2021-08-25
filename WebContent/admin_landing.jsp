@@ -35,6 +35,7 @@
 
 </style>
 <body style="background-color:#cce6ff;">
+<a href="user_logout.jsp" style="float:right;">LogOut</a>
 
 <div class="row">
   <h3 style="color: #0073e6;text-align:center;font-size:35px;">Hello Admin</h3>
@@ -45,7 +46,7 @@ display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:4
 <a href="update_course.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
 display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">Update Course</a>
 <br>
-<a href="delete_course" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
+<a href="delete_course.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
 display: inline-block; font-size: 25px; margin: 4px 2px;cursor: pointer;height:40px;width:200px;">Delete Course</a>
 <br>
 <a href="userlist.jsp" style="background-color: #0066cc; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;
